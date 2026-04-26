@@ -7,3 +7,4 @@ export const iconActionPresets = [
   { icon: <HiPrinter />, label: 'Распечатать' },
   { icon: <HiUpload />, label: 'Загрузить из файла' },
 ];
+

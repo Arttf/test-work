@@ -1,4 +1,4 @@
-@use '../variables' as *;
+@use './variables' as *;
 
 .buttonBase {
   display: inline-flex;
@@ -86,3 +86,4 @@
   justify-content: flex-start;
   padding: 0 18px;
 }
+

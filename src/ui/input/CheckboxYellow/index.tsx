@@ -21,3 +21,4 @@ export function CheckboxYellow({
     </span>
   );
 }
+

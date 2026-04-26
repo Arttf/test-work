@@ -7,7 +7,7 @@ import {
   SuccessOutlineButton,
   SuccessSolidButton,
 } from '../../ui/buttons';
-import { iconActionPresets } from '../../ui/buttons/iconActionPresets';
+import { iconActionPresets } from '../../ui/buttons/base/iconActionPresets';
 
 const stateRows = [
   { key: 'default', visualState: 'default' },

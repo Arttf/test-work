@@ -1,4 +1,5 @@
 import type { ButtonHTMLAttributes, CSSProperties, ReactNode } from 'react';
+
 import './BaseButton.scss';
 
 type BaseButtonProps = {
@@ -44,3 +45,4 @@ export function BaseButton({
     </button>
   );
 }
+

@@ -1,4 +1,5 @@
-export { BaseButton } from './base-button/BaseButton';
+export { BaseButton } from './base';
+export { BlueGlossButton } from './BlueGlossButton';
 export { DangerOutlineButton } from './DangerOutlineButton';
 export { DangerSolidButton } from './DangerSolidButton';
 export { IconActionButton } from './IconActionButton';
@@ -6,4 +7,4 @@ export { NeutralArrowButton } from './NeutralArrowButton';
 export { NeutralButton } from './NeutralButton';
 export { SuccessOutlineButton } from './SuccessOutlineButton';
 export { SuccessSolidButton } from './SuccessSolidButton';
-export type { ButtonProps, ButtonVisualState } from './types';
+export type { ButtonProps, ButtonVisualState } from './base/types';

@@ -1,7 +1,8 @@
-import type { CSSProperties, ReactNode } from 'react';
-import { BaseButton } from './base-button/BaseButton';
+import type { CSSProperties } from 'react';
+import { BaseButton } from '../base';
+import type { ButtonProps } from '../base/types';
 
-const neutralVars: CSSProperties = {
+const arrowVars: CSSProperties = {
   ['--button-bg' as string]: '#f7f7f7',
   ['--button-bg-hover' as string]: '#ffffff',
   ['--button-bg-active' as string]: '#e4e4e4',
@@ -12,25 +13,21 @@ const neutralVars: CSSProperties = {
   ['--button-border-disabled' as string]: '#dddddd',
   ['--button-text' as string]: '#3f3f3f',
   ['--button-text-disabled' as string]: '#c8c8c8',
+  ['--button-arrow' as string]: '#ef3d2f',
 };
 
-type IconActionButtonProps = {
-  disabled?: boolean;
-  icon: ReactNode;
-  label: string;
-};
-
-export function IconActionButton({
+export function NeutralArrowButton({
   disabled = false,
-  icon,
-  label,
-}: IconActionButtonProps) {
+  label = 'Просмотреть',
+  visualState = 'default',
+}: ButtonProps) {
   return (
     <BaseButton
+      arrow
       disabled={disabled}
-      icon={icon}
       label={label}
-      toneVars={neutralVars}
+      toneVars={arrowVars}
+      visualState={visualState}
     />
   );
 }

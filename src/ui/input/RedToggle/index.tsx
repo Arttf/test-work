@@ -15,6 +15,7 @@ export function RedToggle({ checked, onChange }: RedToggleProps) {
       type="button"
     >
       <span className={styles.track}>
+        <span className={styles.trackSurface} />
         <span className={styles.thumb} />
       </span>
     </button>
