@@ -1,17 +1,17 @@
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
+import { SidebarLayout } from '../features/sidebar/ui';
 import { ErrorPage } from '../pages/error/ErrorPage';
 import { HomePage } from '../pages/home/HomePage';
 import { NotFoundPage } from '../pages/not-found/NotFoundPage';
 import { TaskPage } from '../pages/task/TaskPage';
-import { AppLayout } from '../ui/layout/AppLayout';
 import { appPaths } from './path';
 
 const router = createBrowserRouter([
   {
     element: (
-      <AppLayout>
+      <SidebarLayout>
         <Outlet />
-      </AppLayout>
+      </SidebarLayout>
     ),
     errorElement: <ErrorPage />,
     path: appPaths.home,

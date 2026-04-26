@@ -1,16 +1,23 @@
 import { Button } from 'flowbite-react';
 import { HiMenuAlt2 } from 'react-icons/hi';
-import { useSidebarStore } from '../../../store/use-sidebar-store';
 
-export function SidebarToggle() {
-  const { isCollapsed, toggleSidebar } = useSidebarStore();
+type SidebarToggleProps = {
+  isCollapsed: boolean;
+  onToggle: () => void;
+};
+
+export function SidebarToggle({
+  isCollapsed,
+  onToggle,
+}: SidebarToggleProps) {
   const title = isCollapsed ? 'Развернуть меню' : 'Свернуть меню';
 
   return (
     <Button
       aria-label={title}
+      className="!p-[5px]"
       color="light"
-      onClick={toggleSidebar}
+      onClick={onToggle}
       pill
       size="icon"
       title={title}
