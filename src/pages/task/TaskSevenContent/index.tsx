@@ -1,11 +1,15 @@
+import { useState } from 'react';
+import { BlueGlossButton } from '../../../ui/buttons/BlueGlossButton';
+import { RedToggle } from '../../../ui/input/RedToggle';
+
 export function TaskSevenContent() {
+  const [isChecked, setIsChecked] = useState(false);
+
   return (
-    <section className="rounded-[28px] border border-slate-200 bg-white p-8 shadow-sm">
-      <div className="space-y-2">
-        <h1 className="text-3xl font-semibold text-slate-900">Задание 7</h1>
-        <p className="text-sm leading-6 text-slate-600">
-          Папка и базовый `tsx` подготовлены.
-        </p>
+    <section className="flex min-h-[420px] items-center justify-center rounded-[28px] border border-slate-200 bg-white p-8 shadow-sm">
+      <div className="flex flex-col items-center gap-10">
+        <BlueGlossButton label="Кнопка" />
+        <RedToggle checked={isChecked} onChange={setIsChecked} />
       </div>
     </section>
   );
