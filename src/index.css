@@ -15,3 +15,27 @@ body {
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     'Segoe UI', sans-serif;
 }
+
+.showcase-scrollbar {
+  scrollbar-color: #9f1d26 #e5e7eb;
+  scrollbar-width: auto;
+}
+
+.showcase-scrollbar::-webkit-scrollbar {
+  height: 14px;
+}
+
+.showcase-scrollbar::-webkit-scrollbar-track {
+  background: #e5e7eb;
+  border-radius: 999px;
+}
+
+.showcase-scrollbar::-webkit-scrollbar-thumb {
+  background: #9f1d26;
+  border: 2px solid #e5e7eb;
+  border-radius: 999px;
+}
+
+.showcase-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #861922;
+}

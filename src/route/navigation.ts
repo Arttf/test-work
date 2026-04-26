@@ -44,4 +44,10 @@ export const navigationItems: NavigationItem[] = [
     path: appPaths.task(6),
     title: 'Задание 6',
   },
+  {
+    description: 'Страница для седьмого задания.',
+    id: 7,
+    path: appPaths.task(7),
+    title: 'Задание 7',
+  },
 ];

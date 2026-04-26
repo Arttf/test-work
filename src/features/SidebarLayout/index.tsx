@@ -3,9 +3,18 @@ import {
   forwardRef,
   type AnchorHTMLAttributes,
   type PropsWithChildren,
+  useEffect,
   useState,
 } from 'react';
-import { HiOutlineClipboardList } from 'react-icons/hi';
+import {
+  Bs1Circle,
+  Bs2Circle,
+  Bs3Circle,
+  Bs4Circle,
+  Bs5Circle,
+  Bs6Circle,
+  Bs7Circle,
+} from 'react-icons/bs';
 import { NavLink, useLocation } from 'react-router-dom';
 import { navigationItems } from '../../route/navigation';
 import { SidebarToggle } from './SidebarToggle';
@@ -20,9 +29,31 @@ const SidebarLink = forwardRef<HTMLAnchorElement, SidebarLinkProps>(
 
 SidebarLink.displayName = 'SidebarLink';
 
+const taskIcons = {
+  1: Bs1Circle,
+  2: Bs2Circle,
+  3: Bs3Circle,
+  4: Bs4Circle,
+  5: Bs5Circle,
+  6: Bs6Circle,
+  7: Bs7Circle,
+} as const;
+
+const SIDEBAR_STORAGE_KEY = 'sidebar:isCollapsed';
+
 export function SidebarLayout({ children }: PropsWithChildren) {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(() => {
+    if (typeof window === 'undefined') {
+      return false;
+    }
+
+    return window.localStorage.getItem(SIDEBAR_STORAGE_KEY) === 'true';
+  });
   const location = useLocation();
+
+  useEffect(() => {
+    window.localStorage.setItem(SIDEBAR_STORAGE_KEY, String(isCollapsed));
+  }, [isCollapsed]);
 
   return (
     <div className="flex min-h-screen bg-slate-100 text-slate-900">
@@ -57,7 +88,7 @@ export function SidebarLayout({ children }: PropsWithChildren) {
                   active={location.pathname === item.path}
                   as={SidebarLink}
                   href={item.path}
-                  icon={HiOutlineClipboardList}
+                  icon={taskIcons[item.id as keyof typeof taskIcons]}
                 >
                   {item.title}
                 </SidebarItem>
@@ -67,8 +98,8 @@ export function SidebarLayout({ children }: PropsWithChildren) {
         </Sidebar>
       </aside>
 
-      <main className="flex-1 p-4 md:p-6">
-        <div className="mx-auto w-full max-w-7xl">{children}</div>
+      <main className="min-w-0 flex-1 overflow-x-hidden p-4 md:p-6">
+        <div className="mx-auto w-full max-w-7xl min-w-0">{children}</div>
       </main>
     </div>
   );

@@ -2,7 +2,11 @@ import { Alert, Card } from 'flowbite-react';
 import { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import { navigationItems } from '../../route/navigation';
+import { TaskFiveContent } from './TaskFiveContent';
+import { TaskFourContent } from './TaskFourContent';
 import { TaskOneContent } from './TaskOneContent';
+import { TaskSevenContent } from './TaskSevenContent';
+import { TaskSixContent } from './TaskSixContent';
 import { TaskThreeContent } from './TaskThreeContent';
 import { TaskTwoContent } from './TaskTwoContent';
 
@@ -15,11 +19,7 @@ export function TaskPage() {
   );
 
   if (!task) {
-    return (
-      <Alert color="failure">
-        Страница задания не найдена. Проверь маршрут в адресной строке.
-      </Alert>
-    );
+    return <Alert color="failure">Страница задания не найдена.</Alert>;
   }
 
   if (task.id === 1) {
@@ -42,6 +42,38 @@ export function TaskPage() {
     return (
       <section className="space-y-6">
         <TaskThreeContent />
+      </section>
+    );
+  }
+
+  if (task.id === 4) {
+    return (
+      <section className="space-y-6">
+        <TaskFourContent />
+      </section>
+    );
+  }
+
+  if (task.id === 5) {
+    return (
+      <section className="space-y-6">
+        <TaskFiveContent />
+      </section>
+    );
+  }
+
+  if (task.id === 6) {
+    return (
+      <section className="space-y-6">
+        <TaskSixContent />
+      </section>
+    );
+  }
+
+  if (task.id === 7) {
+    return (
+      <section className="space-y-6">
+        <TaskSevenContent />
       </section>
     );
   }
