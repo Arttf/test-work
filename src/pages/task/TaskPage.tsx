@@ -1,8 +1,9 @@
-import { Alert, Badge, Card } from 'flowbite-react';
+import { Alert, Card } from 'flowbite-react';
 import { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import { navigationItems } from '../../route/navigation';
 import { TaskOneContent } from './TaskOneContent';
+import { TaskThreeContent } from './TaskThreeContent';
 import { TaskTwoContent } from './TaskTwoContent';
 
 export function TaskPage() {
@@ -24,10 +25,6 @@ export function TaskPage() {
   if (task.id === 1) {
     return (
       <section className="space-y-6">
-        <Badge color="info" size="sm">
-          Задание {task.id}
-        </Badge>
-
         <TaskOneContent />
       </section>
     );
@@ -36,21 +33,21 @@ export function TaskPage() {
   if (task.id === 2) {
     return (
       <section className="space-y-6">
-        <Badge color="info" size="sm">
-          Задание {task.id}
-        </Badge>
-
         <TaskTwoContent />
+      </section>
+    );
+  }
+
+  if (task.id === 3) {
+    return (
+      <section className="space-y-6">
+        <TaskThreeContent />
       </section>
     );
   }
 
   return (
     <section className="space-y-6">
-      <Badge color="info" size="sm">
-        Задание {task.id}
-      </Badge>
-
       <Card className="border-slate-200 bg-white shadow-sm">
         <div className="space-y-4">
           <h1 className="text-3xl font-semibold text-slate-900">{task.title}</h1>

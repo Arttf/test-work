@@ -1,0 +1,88 @@
+@use '../variables' as *;
+
+.buttonBase {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 188px;
+  height: 52px;
+  padding: 0 22px;
+  border-radius: 10px;
+  border: 2px solid var(--button-border, #c8c8c8);
+  background: var(--button-bg, #f7f7f7);
+  color: var(--button-text, #3e3e3e);
+  box-shadow: $button-shadow;
+  font-family: $button-font-family;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease,
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+  cursor: pointer;
+
+  &:hover:not(:disabled):not([aria-disabled='true']) {
+    background: var(--button-bg-hover, var(--button-bg, #f7f7f7));
+    border-color: var(--button-border-hover, var(--button-border, #c8c8c8));
+    color: var(--button-text-hover, var(--button-text, #3e3e3e));
+  }
+
+  &:active:not(:disabled):not([aria-disabled='true']) {
+    background: var(--button-bg-active, var(--button-bg, #f7f7f7));
+    border-color: var(--button-border-active, var(--button-border, #c8c8c8));
+    color: var(--button-text-active, var(--button-text, #3e3e3e));
+    box-shadow: $button-shadow-active;
+    transform: translateY(1px);
+  }
+
+  &:disabled,
+  &[aria-disabled='true'] {
+    background: var(--button-bg-disabled, #fafafa);
+    border-color: var(--button-border-disabled, #d8d8d8);
+    color: var(--button-text-disabled, #c9c9c9);
+    box-shadow: none;
+    cursor: default;
+  }
+}
+
+.isHover {
+  background: var(--button-bg-hover, var(--button-bg, #f7f7f7));
+  border-color: var(--button-border-hover, var(--button-border, #c8c8c8));
+  color: var(--button-text-hover, var(--button-text, #3e3e3e));
+}
+
+.isActive {
+  background: var(--button-bg-active, var(--button-bg, #f7f7f7));
+  border-color: var(--button-border-active, var(--button-border, #c8c8c8));
+  color: var(--button-text-active, var(--button-text, #3e3e3e));
+  box-shadow: $button-shadow-active;
+  transform: translateY(1px);
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.arrow {
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 10px solid var(--button-arrow, #ef3d2f);
+}
+
+.compact {
+  min-width: 230px;
+  justify-content: flex-start;
+  padding: 0 18px;
+}

@@ -1,5 +1,5 @@
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
-import { SidebarLayout } from '../features/sidebar';
+import { SidebarLayout } from '../features/SidebarLayout';
 import { ErrorPage } from '../pages/error/ErrorPage';
 import { HomePage } from '../pages/home/HomePage';
 import { NotFoundPage } from '../pages/not-found/NotFoundPage';
