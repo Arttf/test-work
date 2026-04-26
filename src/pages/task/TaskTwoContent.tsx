@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import { CheckboxYellow } from '../../ui/input/CheckboxYellow';
 
 export function TaskTwoContent() {
+  const [isAccepted, setIsAccepted] = useState(true);
+
   return (
     <section className="min-h-[640px] rounded-[28px] bg-[radial-gradient(circle_at_top,#f7f7fb_0%,#ececf3_45%,#e6e6ef_100%)] px-6 py-10 text-slate-900 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] md:px-10">
       <div className="mb-6 flex items-start justify-between gap-4">
@@ -79,7 +82,7 @@ export function TaskTwoContent() {
           <div className="grid gap-3 lg:grid-cols-[1fr_2fr_1fr] lg:items-start">
             <div className="hidden lg:block" />
             <label className="flex cursor-pointer items-start gap-3 text-[1.25rem] leading-8 text-slate-800">
-              <CheckboxYellow checked />
+              <CheckboxYellow checked={isAccepted} onChange={setIsAccepted} />
               <span>
                 Соглашаюсь на всё, что бы вы не придумали и осознаю, что это может
                 означать{' '}
@@ -94,7 +97,7 @@ export function TaskTwoContent() {
           <div className="grid gap-3 lg:grid-cols-[1fr_2fr_1fr] lg:items-start">
             <div className="hidden lg:block" />
             <button
-              className="inline-flex h-14 items-center justify-center rounded bg-[linear-gradient(180deg,#8c72ff_0%,#6c4dff_100%)] px-7 text-[1.2rem] font-extrabold text-white shadow-[0_6px_0_rgba(74,48,200,0.45),0_10px_20px_rgba(93,63,211,0.35)] transition hover:translate-y-[1px] hover:shadow-[0_5px_0_rgba(74,48,200,0.45),0_8px_16px_rgba(93,63,211,0.35)]"
+              className="inline-flex h-12 items-center justify-center rounded bg-[linear-gradient(180deg,#8f79ff_0%,#7455f4_58%,#5839c9_100%)] px-7 text-[1.4rem] font-bold text-white shadow-[0_10px_22px_rgba(40,26,108,0.3)] transition hover:translate-y-[1px] hover:shadow-[0_8px_18px_rgba(40,26,108,0.28)]"
               type="button"
             >
               Отправить все мои данные
