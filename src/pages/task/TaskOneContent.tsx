@@ -193,12 +193,12 @@ export function TaskOneContent() {
           нажмите
           <kbd className="mx-1 rounded border border-slate-300 bg-slate-100 px-2 py-1 text-sm text-slate-800">
             <TagLabel name="kbd" />
-            kbd
+            ctrl
           </kbd>
           +
           <kbd className="mx-1 rounded border border-slate-300 bg-slate-100 px-2 py-1 text-sm text-slate-800">
             <TagLabel name="kbd" />
-            kbd
+            +
           </kbd>
           , затем проверьте выделения, интервалы и подписи перед публикацией.
         </p>

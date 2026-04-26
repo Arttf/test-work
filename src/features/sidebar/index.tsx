@@ -7,7 +7,7 @@ import {
 } from 'react';
 import { HiOutlineClipboardList } from 'react-icons/hi';
 import { NavLink, useLocation } from 'react-router-dom';
-import { navigationItems } from '../../../route/navigation';
+import { navigationItems } from '../../route/navigation';
 import { SidebarToggle } from './SidebarToggle';
 
 type SidebarLinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
@@ -26,11 +26,22 @@ export function SidebarLayout({ children }: PropsWithChildren) {
 
   return (
     <div className="flex min-h-screen bg-slate-100 text-slate-900">
-      <aside className="sticky top-0 h-screen shrink-0 overflow-hidden border-r border-slate-200 bg-white transition-[width] duration-300 ease-in-out">
+      <aside className="sticky top-0 z-20 h-screen shrink-0 overflow-visible border-r border-slate-200 bg-white transition-[width] duration-300 ease-in-out">
         <Sidebar
           aria-label="Основная навигация"
-          className="h-full overflow-hidden transition-[width] duration-300 ease-in-out"
+          className="h-full overflow-visible transition-[width] duration-300 ease-in-out"
           collapsed={isCollapsed}
+          theme={{
+            root: {
+              base: 'h-full',
+              collapsed: {
+                off: 'w-64',
+                on: 'w-16',
+              },
+              inner:
+                'h-full overflow-y-auto overflow-x-visible rounded bg-gray-50 px-3 py-4',
+            },
+          }}
         >
           <SidebarItems>
             <div className="mb-4 flex justify-end">

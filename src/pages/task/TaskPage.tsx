@@ -3,6 +3,7 @@ import { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import { navigationItems } from '../../route/navigation';
 import { TaskOneContent } from './TaskOneContent';
+import { TaskTwoContent } from './TaskTwoContent';
 
 export function TaskPage() {
   const { taskId } = useParams();
@@ -28,6 +29,18 @@ export function TaskPage() {
         </Badge>
 
         <TaskOneContent />
+      </section>
+    );
+  }
+
+  if (task.id === 2) {
+    return (
+      <section className="space-y-6">
+        <Badge color="info" size="sm">
+          Задание {task.id}
+        </Badge>
+
+        <TaskTwoContent />
       </section>
     );
   }
