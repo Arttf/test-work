@@ -1,6 +1,6 @@
 import type { CSSProperties } from 'react';
-import { BaseButton } from '../base';
-import type { ButtonProps } from '../base/types';
+import { BaseButton } from '../baseButtom';
+import type { ButtonProps } from '../baseButtom/types';
 
 const successOutlineVars: CSSProperties = {
   ['--button-bg' as string]: '#f7f7f7',

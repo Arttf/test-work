@@ -1,5 +1,5 @@
 import type { CSSProperties, ReactNode } from 'react';
-import { BaseButton } from '../base';
+import { BaseButton } from '../baseButtom';
 
 const neutralVars: CSSProperties = {
   ['--button-bg' as string]: '#f7f7f7',

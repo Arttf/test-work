@@ -1,6 +1,6 @@
 import type { CSSProperties } from 'react';
-import { BaseButton } from '../base';
-import type { ButtonProps } from '../base/types';
+import { BaseButton } from '../baseButtom';
+import type { ButtonProps } from '../baseButtom/types';
 
 const successSolidVars: CSSProperties = {
   ['--button-bg' as string]: '#78a62c',
